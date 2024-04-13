@@ -1,11 +1,17 @@
-<mxfile host="Electron" modified="2024-04-13T02:29:45.197Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.1.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="MnUvrZvnPMUrOQh7FBA3" version="24.1.0" type="device">
+<mxfile host="Electron" modified="2024-04-13T03:14:43.649Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.1.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="Vk2pTCMxHXpS9A6MQ9vB" version="24.1.0" type="device">
   <diagram name="Page-1" id="5O9gjdiTqwnhHQsU6E99">
-    <mxGraphModel dx="2074" dy="1196" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2874" dy="1596" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" background="#000000" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="buJ5L_DoKA7iHr79A3RB-1" value="Theme: Summoning" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=23;" vertex="1" parent="1">
-          <mxGeometry x="170" y="190" width="230" height="30" as="geometry" />
+          <mxGeometry x="-742" y="-217" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="buJ5L_DoKA7iHr79A3RB-2" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;QWOP Style Dance Summoning Game&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;Use QWOP style controls to control someone dancing to summon a thing&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="186" y="-313" width="591" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="buJ5L_DoKA7iHr79A3RB-3" value="So You Think You Can Summon?" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=30;" vertex="1" parent="1">
+          <mxGeometry x="-771" y="-169" width="501" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

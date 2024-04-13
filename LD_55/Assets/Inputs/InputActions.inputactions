@@ -147,7 +147,7 @@
             ]
         },
         {
-            "name": "Game",
+            "name": "Summoning",
             "id": "c52403e1-ae69-4ec2-bd26-39f08860b36a",
             "actions": [
                 {
@@ -172,6 +172,42 @@
                     "name": "Pause",
                     "type": "Button",
                     "id": "fa9d5d8c-6600-423d-a5a3-9b4ba8163558",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Q",
+                    "type": "Button",
+                    "id": "89aff10b-dfab-4314-a040-50dc20c317ab",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "W",
+                    "type": "Button",
+                    "id": "c882d030-024c-4d6b-a933-c7ef01bdcecd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "O",
+                    "type": "Button",
+                    "id": "153618b6-ed34-4c66-8a74-1b016a1e223c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "P",
+                    "type": "Button",
+                    "id": "245005ee-0e39-4dee-b327-25d3d6d28141",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -286,6 +322,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "efa8da28-2480-471a-96a4-27941ef24b79",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Q",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "73587a97-81cd-4a0a-88a2-f2d8b5ce24fc",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "W",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f1d7198-5115-4438-b303-b90cefe87cf9",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "O",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d98d0bd8-7daa-4695-a3e6-36cbe85408ec",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "P",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

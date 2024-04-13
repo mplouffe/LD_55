@@ -169,7 +169,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Game"",
+            ""name"": ""Summoning"",
             ""id"": ""c52403e1-ae69-4ec2-bd26-39f08860b36a"",
             ""actions"": [
                 {
@@ -194,6 +194,42 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""fa9d5d8c-6600-423d-a5a3-9b4ba8163558"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Q"",
+                    ""type"": ""Button"",
+                    ""id"": ""89aff10b-dfab-4314-a040-50dc20c317ab"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""W"",
+                    ""type"": ""Button"",
+                    ""id"": ""c882d030-024c-4d6b-a933-c7ef01bdcecd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""O"",
+                    ""type"": ""Button"",
+                    ""id"": ""153618b6-ed34-4c66-8a74-1b016a1e223c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""P"",
+                    ""type"": ""Button"",
+                    ""id"": ""245005ee-0e39-4dee-b327-25d3d6d28141"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -308,6 +344,50 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""efa8da28-2480-471a-96a4-27941ef24b79"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Q"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""73587a97-81cd-4a0a-88a2-f2d8b5ce24fc"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""W"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f1d7198-5115-4438-b303-b90cefe87cf9"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""O"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d98d0bd8-7daa-4695-a3e6-36cbe85408ec"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -611,11 +691,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_MainMenu_Select = m_MainMenu.FindAction("Select", throwIfNotFound: true);
         m_MainMenu_Escape = m_MainMenu.FindAction("Escape", throwIfNotFound: true);
         m_MainMenu_Move = m_MainMenu.FindAction("Move", throwIfNotFound: true);
-        // Game
-        m_Game = asset.FindActionMap("Game", throwIfNotFound: true);
-        m_Game_Move = m_Game.FindAction("Move", throwIfNotFound: true);
-        m_Game_Action = m_Game.FindAction("Action", throwIfNotFound: true);
-        m_Game_Pause = m_Game.FindAction("Pause", throwIfNotFound: true);
+        // Summoning
+        m_Summoning = asset.FindActionMap("Summoning", throwIfNotFound: true);
+        m_Summoning_Move = m_Summoning.FindAction("Move", throwIfNotFound: true);
+        m_Summoning_Action = m_Summoning.FindAction("Action", throwIfNotFound: true);
+        m_Summoning_Pause = m_Summoning.FindAction("Pause", throwIfNotFound: true);
+        m_Summoning_Q = m_Summoning.FindAction("Q", throwIfNotFound: true);
+        m_Summoning_W = m_Summoning.FindAction("W", throwIfNotFound: true);
+        m_Summoning_O = m_Summoning.FindAction("O", throwIfNotFound: true);
+        m_Summoning_P = m_Summoning.FindAction("P", throwIfNotFound: true);
         // PauseMenu
         m_PauseMenu = asset.FindActionMap("PauseMenu", throwIfNotFound: true);
         m_PauseMenu_Move = m_PauseMenu.FindAction("Move", throwIfNotFound: true);
@@ -746,28 +830,36 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     }
     public MainMenuActions @MainMenu => new MainMenuActions(this);
 
-    // Game
-    private readonly InputActionMap m_Game;
-    private List<IGameActions> m_GameActionsCallbackInterfaces = new List<IGameActions>();
-    private readonly InputAction m_Game_Move;
-    private readonly InputAction m_Game_Action;
-    private readonly InputAction m_Game_Pause;
-    public struct GameActions
+    // Summoning
+    private readonly InputActionMap m_Summoning;
+    private List<ISummoningActions> m_SummoningActionsCallbackInterfaces = new List<ISummoningActions>();
+    private readonly InputAction m_Summoning_Move;
+    private readonly InputAction m_Summoning_Action;
+    private readonly InputAction m_Summoning_Pause;
+    private readonly InputAction m_Summoning_Q;
+    private readonly InputAction m_Summoning_W;
+    private readonly InputAction m_Summoning_O;
+    private readonly InputAction m_Summoning_P;
+    public struct SummoningActions
     {
         private @InputActions m_Wrapper;
-        public GameActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_Game_Move;
-        public InputAction @Action => m_Wrapper.m_Game_Action;
-        public InputAction @Pause => m_Wrapper.m_Game_Pause;
-        public InputActionMap Get() { return m_Wrapper.m_Game; }
+        public SummoningActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_Summoning_Move;
+        public InputAction @Action => m_Wrapper.m_Summoning_Action;
+        public InputAction @Pause => m_Wrapper.m_Summoning_Pause;
+        public InputAction @Q => m_Wrapper.m_Summoning_Q;
+        public InputAction @W => m_Wrapper.m_Summoning_W;
+        public InputAction @O => m_Wrapper.m_Summoning_O;
+        public InputAction @P => m_Wrapper.m_Summoning_P;
+        public InputActionMap Get() { return m_Wrapper.m_Summoning; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(GameActions set) { return set.Get(); }
-        public void AddCallbacks(IGameActions instance)
+        public static implicit operator InputActionMap(SummoningActions set) { return set.Get(); }
+        public void AddCallbacks(ISummoningActions instance)
         {
-            if (instance == null || m_Wrapper.m_GameActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_GameActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_SummoningActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_SummoningActionsCallbackInterfaces.Add(instance);
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
@@ -777,9 +869,21 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Q.started += instance.OnQ;
+            @Q.performed += instance.OnQ;
+            @Q.canceled += instance.OnQ;
+            @W.started += instance.OnW;
+            @W.performed += instance.OnW;
+            @W.canceled += instance.OnW;
+            @O.started += instance.OnO;
+            @O.performed += instance.OnO;
+            @O.canceled += instance.OnO;
+            @P.started += instance.OnP;
+            @P.performed += instance.OnP;
+            @P.canceled += instance.OnP;
         }
 
-        private void UnregisterCallbacks(IGameActions instance)
+        private void UnregisterCallbacks(ISummoningActions instance)
         {
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
@@ -790,23 +894,35 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Q.started -= instance.OnQ;
+            @Q.performed -= instance.OnQ;
+            @Q.canceled -= instance.OnQ;
+            @W.started -= instance.OnW;
+            @W.performed -= instance.OnW;
+            @W.canceled -= instance.OnW;
+            @O.started -= instance.OnO;
+            @O.performed -= instance.OnO;
+            @O.canceled -= instance.OnO;
+            @P.started -= instance.OnP;
+            @P.performed -= instance.OnP;
+            @P.canceled -= instance.OnP;
         }
 
-        public void RemoveCallbacks(IGameActions instance)
+        public void RemoveCallbacks(ISummoningActions instance)
         {
-            if (m_Wrapper.m_GameActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_SummoningActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IGameActions instance)
+        public void SetCallbacks(ISummoningActions instance)
         {
-            foreach (var item in m_Wrapper.m_GameActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_SummoningActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_GameActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_SummoningActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public GameActions @Game => new GameActions(this);
+    public SummoningActions @Summoning => new SummoningActions(this);
 
     // PauseMenu
     private readonly InputActionMap m_PauseMenu;
@@ -937,11 +1053,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnEscape(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
     }
-    public interface IGameActions
+    public interface ISummoningActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAction(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnQ(InputAction.CallbackContext context);
+        void OnW(InputAction.CallbackContext context);
+        void OnO(InputAction.CallbackContext context);
+        void OnP(InputAction.CallbackContext context);
     }
     public interface IPauseMenuActions
     {
